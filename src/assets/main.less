@@ -1,0 +1,62 @@
+body, html {
+
+}
+
+.archivable-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: hidden;
+}
+
+.drag-boundary {
+  height: 100px;
+  background-color: yellow;
+  position: relative;
+  transition: height 0.5s ease-in-out;
+  width: 300vw;
+  transform: translate3d(-200vw, 0, 0);
+
+  .draggable {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0px;
+    width: 100vw;
+    height: 100px;
+    background-color: red;
+    touch-action: pan-y;
+
+    .handle-draggable {
+      position: absolute;
+      z-index: 11;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 30%;
+      background-color: transparent;
+      touch-action: pan-x;
+      border-left: 1px solid darken(tomato, 10%);
+    }
+
+    .content {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      background-color: tomato;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      //pointer-events: none;
+    }
+  }
+
+  &.archived {
+    height: 0;
+  }
+}
+

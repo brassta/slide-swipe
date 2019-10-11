@@ -1,0 +1,4 @@
+<div class="drag-boundary" [ngClass]="{'archived':isArchived}" >
+  <div class="draggable" [attr.data-offset]="0" cdkDragBoundary=".drag-boundary" [@menuItemState]="{value:menuItemState, params:{droppedState:droppedState}}" (@menuItemState.done)="animationFinished($event)" cdkDrag  (cdkDragEnded)="drop($event)"
+       [cdkDragFreeDragPosition]="resetPosition" ><div class="content" (click)="clicked($event)">ovde je kontent malo duzi tekst</div><div class="handle-draggable" cdkDragHandle></div></div>
+</div>
